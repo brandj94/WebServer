@@ -1,0 +1,16 @@
+Walter Tucker waltert
+Brandon Jacobsen brandj94
+
+What currently runs:
+     Our current implementation successfully implements the base system status web service, 
+multiple client support, protocol independence, and file serving requests. The test script 
+gives full points for minimum requirements, IPv6 functionality, and extra tests. The test 
+script sometimes hangs during the malicious tests, but about half the time it will simply 
+crash the server, giving 8 points for robustness.
+ 
+Design Description:
+       Our server opens sockets and listens to requests from connectors. When a request 
+gets sent, our server creates a thread to handle the request. The message is parsed and 
+handled according to what is asked, whether it be for loadavg or others, and if it is in
+ HTTP 1.0 or 1.1 protocol. The results from the request are sent over the file descriptor back to the client.
+
